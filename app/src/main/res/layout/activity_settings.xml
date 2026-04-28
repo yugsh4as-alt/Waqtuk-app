@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_primary">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/surface_dark"
+        app:elevation="0dp">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:title="الإعدادات"
+            android:titleTextColor="@color/text_primary"/>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- ── Calculation Method ─────────────────────────────────── -->
+            <TextView style="@style/SectionHeader" android:text="طريقة الحساب"/>
+
+            <com.google.android.material.card.MaterialCardView style="@style/SettingsCard">
+                <LinearLayout style="@style/CardContent">
+
+                    <TextView style="@style/FieldLabel" android:text="طريقة حساب الفجر والعشاء"/>
+                    <Spinner android:id="@+id/spinner_calc_method"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"/>
+
+                    <View style="@style/Divider"/>
+
+                    <TextView style="@style/FieldLabel" android:text="المذهب الفقهي للعصر"/>
+                    <Spinner android:id="@+id/spinner_asr"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ── Time Adjustments ──────────────────────────────────── -->
+            <TextView style="@style/SectionHeader" android:text="تعديل المواقيت (دقائق)"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="أضف أو اطرح دقائق لمطابقة المرجع الديني في بلدك"
+                android:textColor="@color/text_secondary"
+                android:textSize="12sp"/>
+
+            <com.google.android.material.card.MaterialCardView style="@style/SettingsCard">
+                <LinearLayout style="@style/CardContent">
+
+                    <!-- Fajr adjustment -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:gravity="center_vertical"
+                        android:layout_marginBottom="10dp">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:text="الفجر"
+                            android:textColor="@color/text_primary" android:textSize="14sp"/>
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_adj_fajr_minus"
+                            style="@style/AdjBtn" android:text="−"/>
+                        <TextView android:id="@+id/tv_adj_fajr"
+                            style="@style/AdjValue"/>
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_adj_fajr_plus"
+                            style="@style/AdjBtn" android:text="+"/>
+                    </LinearLayout>
+
+                    <!-- Dhuhr adjustment -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:gravity="center_vertical"
+                        android:layout_marginBottom="10dp">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:text="الظهر"
+                            android:textColor="@color/text_primary" android:textSize="14sp"/>
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_adj_dhuhr_minus"
+                            style="@style/AdjBtn" android:text="−"/>
+                        <TextView android:id="@+id/tv_adj_dhuhr"
+                            style="@style/AdjValue"/>
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_adj_dhuhr_plus"
+                            style="@style/AdjBtn" android:text="+"/>
+                    </LinearLayout>
+
+                    <!-- Asr adjustment -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:gravity="center_vertical"
+                        android:layout_marginBottom="10dp">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:text="العصر"
+                            android:textColor="@color/text_primary" android:textSize="14sp"/>
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_adj_asr_minus"
+                            style="@style/AdjBtn" android:text="−"/>
+                        <TextView android:id="@+id/tv_adj_asr"
+                            style="@style/AdjValue"/>
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_adj_asr_plus"
+                            style="@style/AdjBtn" android:text="+"/>
+                    </LinearLayout>
+
+                    <!-- Maghrib adjustment -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:gravity="center_vertical"
+                        android:layout_marginBottom="10dp">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:text="المغرب"
+                            android:textColor="@color/text_primary" android:textSize="14sp"/>
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_adj_maghrib_minus"
+                            style="@style/AdjBtn" android:text="−"/>
+                        <TextView android:id="@+id/tv_adj_maghrib"
+                            style="@style/AdjValue"/>
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_adj_maghrib_plus"
+                            style="@style/AdjBtn" android:text="+"/>
+                    </LinearLayout>
+
+                    <!-- Isha adjustment -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:gravity="center_vertical">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:text="العشاء"
+                            android:textColor="@color/text_primary" android:textSize="14sp"/>
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_adj_isha_minus"
+                            style="@style/AdjBtn" android:text="−"/>
+                        <TextView android:id="@+id/tv_adj_isha"
+                            style="@style/AdjValue"/>
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_adj_isha_plus"
+                            style="@style/AdjBtn" android:text="+"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ── Iqama Offsets ──────────────────────────────────────── -->
+            <TextView style="@style/SectionHeader" android:text="وقت الإقامة (دقائق بعد الأذان)"/>
+
+            <com.google.android.material.card.MaterialCardView style="@style/SettingsCard">
+                <LinearLayout style="@style/CardContent">
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:gravity="center_vertical"
+                        android:layout_marginBottom="10dp">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:text="الفجر"
+                            android:textColor="@color/text_secondary" android:textSize="14sp"/>
+                        <EditText android:id="@+id/et_iqama_fajr"
+                            style="@style/IqamaField"/>
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:gravity="center_vertical"
+                        android:layout_marginBottom="10dp">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:text="الظهر"
+                            android:textColor="@color/text_secondary" android:textSize="14sp"/>
+                        <EditText android:id="@+id/et_iqama_dhuhr"
+                            style="@style/IqamaField"/>
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:gravity="center_vertical"
+                        android:layout_marginBottom="10dp">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:text="العصر"
+                            android:textColor="@color/text_secondary" android:textSize="14sp"/>
+                        <EditText android:id="@+id/et_iqama_asr"
+                            style="@style/IqamaField"/>
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:gravity="center_vertical"
+                        android:layout_marginBottom="10dp">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:text="المغرب"
+                            android:textColor="@color/text_secondary" android:textSize="14sp"/>
+                        <EditText android:id="@+id/et_iqama_maghrib"
+                            style="@style/IqamaField"/>
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:gravity="center_vertical">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:text="العشاء"
+                            android:textColor="@color/text_secondary" android:textSize="14sp"/>
+                        <EditText android:id="@+id/et_iqama_isha"
+                            style="@style/IqamaField"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ── Jumuah ─────────────────────────────────────────────── -->
+            <TextView style="@style/SectionHeader" android:text="صلاة الجمعة"/>
+
+            <com.google.android.material.card.MaterialCardView style="@style/SettingsCard">
+                <LinearLayout style="@style/CardContent">
+                    <TextView style="@style/FieldLabel"
+                        android:text="وقت الجمعة (HH:MM، اتركه فارغاً = الظهر)"/>
+                    <EditText android:id="@+id/et_jumuah_time"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:hint="مثال: 13:15"
+                        android:textColor="@color/text_primary"
+                        android:inputType="time"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ── Display ────────────────────────────────────────────── -->
+            <TextView style="@style/SectionHeader" android:text="العرض"/>
+
+            <com.google.android.material.card.MaterialCardView style="@style/SettingsCard">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:padding="16dp"
+                    android:gravity="center_vertical">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:text="ساعة 24"
+                        android:textColor="@color/text_primary" android:textSize="15sp"/>
+                    <androidx.appcompat.widget.SwitchCompat android:id="@+id/switch_24h"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ── Adhan Notifications ────────────────────────────────── -->
+            <TextView style="@style/SectionHeader" android:text="إشعارات الأذان"/>
+
+            <com.google.android.material.card.MaterialCardView style="@style/SettingsCard">
+                <LinearLayout style="@style/CardContent">
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:gravity="center_vertical"
+                        android:layout_marginBottom="8dp">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:text="تفعيل الأذان"
+                            android:textColor="@color/text_primary" android:textSize="15sp"
+                            android:textStyle="bold"/>
+                        <androidx.appcompat.widget.SwitchCompat android:id="@+id/switch_adhan"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                    </LinearLayout>
+
+                    <View style="@style/Divider"/>
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:gravity="center_vertical"
+                        android:layout_marginTop="8dp" android:layout_marginBottom="8dp">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:text="الفجر"
+                            android:textColor="@color/text_secondary" android:textSize="14sp"/>
+                        <androidx.appcompat.widget.SwitchCompat android:id="@+id/switch_fajr"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:gravity="center_vertical"
+                        android:layout_marginBottom="8dp">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:text="الظهر"
+                            android:textColor="@color/text_secondary" android:textSize="14sp"/>
+                        <androidx.appcompat.widget.SwitchCompat android:id="@+id/switch_dhuhr"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:gravity="center_vertical"
+                        android:layout_marginBottom="8dp">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:text="العصر"
+                            android:textColor="@color/text_secondary" android:textSize="14sp"/>
+                        <androidx.appcompat.widget.SwitchCompat android:id="@+id/switch_asr"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:gravity="center_vertical"
+                        android:layout_marginBottom="8dp">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:text="المغرب"
+                            android:textColor="@color/text_secondary" android:textSize="14sp"/>
+                        <androidx.appcompat.widget.SwitchCompat android:id="@+id/switch_maghrib"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:gravity="center_vertical">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:text="العشاء"
+                            android:textColor="@color/text_secondary" android:textSize="14sp"/>
+                        <androidx.appcompat.widget.SwitchCompat android:id="@+id/switch_isha"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

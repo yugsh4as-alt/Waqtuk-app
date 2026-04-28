@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_primary"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <!-- اسم التطبيق بالعربي -->
+    <TextView
+        android:id="@+id/tv_splash_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="وقتك"
+        android:textColor="@color/accent_gold"
+        android:textSize="56sp"
+        android:textStyle="bold"
+        android:alpha="0"/>
+
+    <!-- الاسم بالإنجليزي -->
+    <TextView
+        android:id="@+id/tv_splash_sub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="Waqtuk"
+        android:textColor="@color/text_secondary"
+        android:textSize="16sp"
+        android:letterSpacing="0.15"
+        android:alpha="0"/>
+
+    <!-- فاصل ذهبي -->
+    <View
+        android:id="@+id/view_line"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="24dp"
+        android:background="@color/accent_gold"
+        android:alpha="0"/>
+
+    <!-- شعار في الأسفل -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="مواقيت الصلاة"
+        android:textColor="@color/text_secondary"
+        android:textSize="13sp"
+        android:alpha="0.5"/>
+
+</LinearLayout>
