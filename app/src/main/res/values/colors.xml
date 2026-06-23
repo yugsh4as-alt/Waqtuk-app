@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- خلفيات — أزرق داكن عميق -->
+    <color name="bg_primary">#0D1B2A</color>
+    <color name="surface_dark">#112233</color>
+    <color name="surface_card">#1A2D40</color>
+    <color name="divider">#1E3A55</color>
+
+    <!-- نص -->
+    <color name="text_primary">#EEF2F7</color>
+    <color name="text_secondary">#7A9BB5</color>
+
+    <!-- ذهبي راقٍ -->
+    <color name="accent_gold">#C8A84B</color>
+    <color name="accent_gold_light">#E2C068</color>
+
+    <!-- أخضر هادئ للصلاة القادمة -->
+    <color name="accent_green">#1B5E42</color>
+    <color name="accent_green_dark">#133F2D</color>
+    <color name="accent_green_light">#226B4E</color>
+
+    <!-- نظام -->
+    <color name="colorPrimary">#112233</color>
+    <color name="colorPrimaryDark">#0D1B2A</color>
+    <color name="colorAccent">#C8A84B</color>
+</resources>

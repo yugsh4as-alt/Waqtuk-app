@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">وقتك</string>
+    <string name="settings">الإعدادات</string>
+    <string name="set_location">تحديد الموقع</string>
+    <string name="refresh_location">تحديث GPS</string>
+    <string name="next_prayer">الصلاة القادمة</string>
+    <string name="fajr">الفجر</string>
+    <string name="sunrise">الشروق</string>
+    <string name="dhuhr">الظهر</string>
+    <string name="asr">العصر</string>
+    <string name="sunset">الغروب</string>
+    <string name="maghrib">المغرب</string>
+    <string name="isha">العشاء</string>
+    <string name="location_searching">جاري تحديد الموقع…</string>
+    <string name="adhan_playing">يعزف الأذان</string>
+    <string name="stop">إيقاف</string>
+    <string name="jumuah">صلاة الجمعة</string>
+    <string name="iqama">الإقامة</string>
+    <string name="change">تغيير</string>
+    <string name="language">اللغة</string>
+    <string name="today">اليوم</string>
+    <string name="prayer_times">مواقيت الصلاة</string>
+</resources>

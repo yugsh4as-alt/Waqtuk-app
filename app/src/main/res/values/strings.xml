@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Waqtuk</string>
+    <string name="settings">Settings</string>
+    <string name="set_location">Set Location</string>
+    <string name="refresh_location">Refresh GPS</string>
+    <string name="next_prayer">Next Prayer</string>
+    <string name="fajr">Fajr</string>
+    <string name="sunrise">Sunrise</string>
+    <string name="dhuhr">Dhuhr</string>
+    <string name="asr">Asr</string>
+    <string name="sunset">Sunset</string>
+    <string name="maghrib">Maghrib</string>
+    <string name="isha">Isha</string>
+    <string name="location_searching">Locating…</string>
+    <string name="adhan_playing">Adhan playing</string>
+    <string name="stop">Stop</string>
+    <string name="jumuah">Jumuah Prayer</string>
+    <string name="iqama">Iqama</string>
+    <string name="change">Change</string>
+    <string name="language">Language</string>
+    <string name="today">Today</string>
+    <string name="prayer_times">Prayer Times</string>
+</resources>

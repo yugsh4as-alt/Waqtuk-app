@@ -1,0 +1,44 @@
+===================================================
+  Waqtuk - تعليمات البناء
+===================================================
+
+المتطلبات:
+----------
+1. Java JDK 17  →  https://adoptium.net
+2. Android SDK  →  اقرأ تحت
+
+خطوة 1 - تحميل Android SDK (بدون Android Studio)
+---------------------------------------------------
+1. روح: https://developer.android.com/studio#command-line-tools-only
+2. حمّل "Command line tools only" لـ Windows
+3. فك الضغط في مجلد مثلاً:  C:\Android\cmdline-tools\latest\
+4. افتح CMD واكتب:
+   set ANDROID_HOME=C:\Android
+   set PATH=%PATH%;%ANDROID_HOME%\cmdline-tools\latest\bin
+5. ثم:
+   sdkmanager "platforms;android-34" "build-tools;34.0.0" "platform-tools"
+   (قبل الخطوة دي تحتاج تقبل الشروط: sdkmanager --licenses)
+
+خطوة 2 - متغير البيئة
+-----------------------
+اضف في System Environment Variables:
+  ANDROID_HOME = C:\Android
+
+خطوة 3 - البناء
+----------------
+افتح VS Code Terminal في مجلد المشروع:
+  cd PrayerTimesApp
+  gradlew.bat assembleDebug
+
+خطوة 4 - وين الـ APK؟
+-----------------------
+  app\build\outputs\apk\debug\app-debug.apk
+
+خطوة 5 - التثبيت على الهاتف
+-----------------------------
+1. فعّل USB Debugging في هاتفك
+2. وصّل الكيبل
+3. اكتب:
+   adb install app\build\outputs\apk\debug\app-debug.apk
+
+===================================================
